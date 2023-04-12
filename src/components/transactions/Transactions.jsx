@@ -13,7 +13,11 @@ export const Transactions = ({ dataTransactions }) => {
         </tr>
       </thead>
       <tbody>
-        <TransactionItem transactions={dataTransactions} />
+        {dataTransactions.map(transaction => {
+          return (
+            <TransactionItem transaction={transaction} key={transaction.id} />
+          );
+        })}
       </tbody>
     </table>
   );

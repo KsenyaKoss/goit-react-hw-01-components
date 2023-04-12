@@ -1,15 +1,11 @@
-export const TransactionItem = ({transactions}) =>{
-  return (
-     transactions.map(({id, type, amount, currency}) => {
-return (
+export const TransactionItem = ({ transaction }) => {
+  const { type, amount, currency } = transaction;
 
-    <tr key={id}>
+  return (
+    <tr>
       <td>{type}</td>
       <td>{amount}</td>
       <td>{currency}</td>
     </tr>
-  
-)
-    })
-  )
-}
+  );
+};
