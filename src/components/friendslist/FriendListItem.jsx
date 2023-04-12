@@ -1,33 +1,15 @@
-import styled from 'styled-components';
+import css from './FriendsList.module.css'
 
-export const FriendListItem = ({friends}) => {
+export const FriendListItem = ({ friend }) => {
+    const { avatar, name, isOnline } = friend
+
+        
     return (
-        friends.map(({ avatar, id, isOnline, name }) => {
-           return (
-           <Styledli key={id}> 
-           <Styledspan isOnline={isOnline}></Styledspan>
-           <img className="avatar" src={avatar} alt="User avatar" width="48" />
-           <p className="name">{name}</p>
-           </Styledli>)
-        })
+           <li className={css.li} > 
+           <span className={isOnline? css.green : css.red} ></span>
+           <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
+           <p className={css.name}>{name}</p>
+           </li>
+        
     )
 }
-
-
-const Styledspan = styled.span`
-display: inline; 
-width: 20px;
-height: 20px;
-border-radius: 50%;
-display: block;
-
-background-color: ${props => props.isOnline? "green" : "red"};
-`
-
-const Styledli = styled.li`
-    display: flex;
-    gap: 30px;
-    align-items: center;
-
-`
-

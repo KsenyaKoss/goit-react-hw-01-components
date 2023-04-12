@@ -1,0 +1,23 @@
+.span {
+  display: inline;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+}
+
+.li {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.green {
+  composes: span;
+  background-color: green;
+}
+
+.red {
+  composes: span;
+  background-color: red;
+}
